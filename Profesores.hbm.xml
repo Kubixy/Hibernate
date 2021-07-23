@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-dic-2019 12:36:19 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate1.Profesores" table="profesores" schema="dbo" catalog="Ejemplo" optimistic-lock="version">
+        <id name="nrp" type="int">
+            <column name="NRP" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="departamentos" class="hibernate1.Departamentos" fetch="select">
+            <column name="dept_no" />
+        </many-to-one>
+        <property name="salario" type="big_decimal">
+            <column name="salario" scale="4" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="50" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="50" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" />
+        </property>
+        <property name="fechaAlta" type="string">
+            <column name="fecha_alta" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
